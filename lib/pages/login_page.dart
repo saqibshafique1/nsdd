@@ -7,8 +7,16 @@ import 'package:nsdd/utils/routes.dart';
 
 import '../utils/constants.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({Key? key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  bool obSecure = true;
+
   final _globalKeyLoginForm = GlobalKey<FormState>();
 
   @override
@@ -53,11 +61,21 @@ class LoginPage extends StatelessWidget {
                         TextFormField(
                           keyboardType: TextInputType.text,
                           textInputAction: TextInputAction.done,
-                          obscureText: true,
-                          decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.key),
+                          obscureText: obSecure,
+                          decoration: InputDecoration(
+                            prefixIcon: const Icon(Icons.key),
                             hintText: 'Enter Password',
-                            suffixIcon: Icon(Icons.visibility),
+                            suffixIcon: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    obSecure = !obSecure;
+                                  });
+                                },
+                                icon: obSecure
+                                    ? const Icon(
+                                        Icons.visibility,
+                                      )
+                                    : const Icon(Icons.visibility_off)),
                           ),
                         ),
                         kPageItemSpacing,

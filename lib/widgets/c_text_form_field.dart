@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CTextFormField extends StatelessWidget {
+class CTextFormField extends StatefulWidget {
   final TextEditingController? controller;
   final String? initialValue;
   final Widget? prefixIcon;
@@ -34,22 +34,27 @@ class CTextFormField extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<CTextFormField> createState() => _CTextFormFieldState();
+}
+
+class _CTextFormFieldState extends State<CTextFormField> {
+  @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: controller,
-      initialValue: initialValue,
-      obscureText: obscureText,
-      keyboardType: keyboardType,
-      textInputAction: textInputAction,
-      readOnly: readOnly,
-      showCursor: showCursor,
-      onTap: onTap,
-      validator: validator,
-      onSaved: onSaved,
+      controller: widget.controller,
+      initialValue: widget.initialValue,
+      obscureText: widget.obscureText,
+      keyboardType: widget.keyboardType,
+      textInputAction: widget.textInputAction,
+      readOnly: widget.readOnly,
+      showCursor: widget.showCursor,
+      onTap: widget.onTap,
+      validator: widget.validator,
+      onSaved: widget.onSaved,
       decoration: InputDecoration(
-        prefixIcon: prefixIcon,
-        hintText: hintText,
-        suffixIcon: suffixIcon,
+        prefixIcon: widget.prefixIcon,
+        hintText: widget.hintText,
+        suffixIcon: widget.suffixIcon,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.r),
           borderSide: const BorderSide(color: Colors.transparent, width: 0),
