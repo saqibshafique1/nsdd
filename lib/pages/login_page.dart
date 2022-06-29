@@ -105,8 +105,12 @@ class _LoginPageState extends State<LoginPage> {
                           width: double.infinity,
                           child: ElevatedButton(
                             onPressed: () {
+                              //      Agar tum ye chahtay ho k screen jab change ho or history delete ho jaye then use below one
+
                               Navigator.pushReplacementNamed(
                                   context, RouteGenerator.home);
+
+                              //      Agar tum ye chahtay ho k screen jab change ho or history delete na  ho then use below one
                               // Navigator.pushNamed(context, RouteGenerator.home);
                             },
                             child: Text(
