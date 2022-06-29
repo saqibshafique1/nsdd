@@ -104,7 +104,11 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushReplacementNamed(
+                                  context, RouteGenerator.home);
+                              // Navigator.pushNamed(context, RouteGenerator.home);
+                            },
                             child: Text(
                               'Login',
                               style: Theme.of(context).textTheme.button,
