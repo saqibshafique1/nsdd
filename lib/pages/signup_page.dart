@@ -13,6 +13,7 @@ class SignupPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool obsecure = true;
     return Scaffold(
       body: Stack(
         children: [
@@ -80,11 +81,13 @@ class SignupPage extends StatelessWidget {
                         TextFormField(
                           keyboardType: TextInputType.text,
                           textInputAction: TextInputAction.done,
-                          obscureText: true,
-                          decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.key),
+                          obscureText: obsecure,
+                          decoration: InputDecoration(
+                            prefixIcon: const Icon(Icons.key),
                             hintText: 'Enter Password',
-                            suffixIcon: Icon(Icons.visibility),
+                            suffixIcon: IconButton(
+                                onPressed: () {},
+                                icon: const Icon(Icons.visibility)),
                           ),
                         ),
                         kPageItemSpacing,

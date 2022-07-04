@@ -27,7 +27,7 @@ class RouteGenerator {
       case otp:
         return MaterialPageRoute(builder: (_) => const OtpPage());
       case home:
-        return MaterialPageRoute(builder: (_) => const HomePage());
+        return MaterialPageRoute(builder: (_) => const MainPage());
       default:
         throw RouteException('Route not found');
     }

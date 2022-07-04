@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nsdd/pages/try_widget.dart';
 import 'package:nsdd/utils/theme_dark.dart';
 import 'package:nsdd/utils/theme_light.dart';
 import 'utils/routes.dart';
@@ -23,8 +24,9 @@ class MyApp extends StatelessWidget {
         theme: themeDataLight,
         darkTheme: themeDataDark,
         // Routes config
-        initialRoute: RouteGenerator.login,
+        initialRoute: RouteGenerator.home,
         onGenerateRoute: RouteGenerator.generateRoute,
+        // home: const TryWidget(),
       ),
       designSize: const Size(375, 812),
     );
